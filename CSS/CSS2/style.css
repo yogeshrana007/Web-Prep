@@ -1,0 +1,63 @@
+
+/* h1 and h3 dono me ek sath change kr skte hai */
+h1,h3{
+    color: brown;
+    font-family:  'Times New Roman', serif;
+}
+
+/* Id selector :- it uses the id on which we want to change and here login is that id name we have made in our html file*/
+#login{
+    background-color: azure;
+}
+#signup{
+    color: white;
+    background-color: rgb(215, 190, 157);
+}
+#practicePage{
+    font-family: 'Courier New';
+}
+#head{
+    color: #1b74e4;
+}
+#search{
+    background-color: black;
+    color: white;
+}
+
+/*Class selector:- If we want change in differnt element we use class in that element and assign the name class="upvote"*/
+.upvote{
+    background-color: aqua;
+}
+.button{
+    background-color: aqua
+}
+
+/* Descendent Selector:- means if we want change everywhere that comes aftr paragraph or anything we use this */
+p a{
+    background-color: rgb(172, 190, 205);
+}
+/*Ase kitne hi deep me chale jate hai*/
+ul li a{
+    color: rgb(188, 51, 140);
+}
+
+/*Adjacent Sibling Combinator:- jo bhi just uske baad aaya ho (not a child) like <p></p> then <h3></h3> so jitne v h3 tags honge jo p ke baad ayenge unme changes honge */
+p+h3{
+    color: #1b74e4;
+    text-decoration:black  underline;
+}
+.upvote+button{
+    background-color: chartreuse;
+}
+/*Child Combinator ;- Ex-selects all paragraph which are direct child of div*/
+p>a{
+    color: crimson;
+}
+
+/*Pseudo class*/
+button:hover{
+    background-color: rgb(7, 7, 7);
+}
+button:active{
+    color: #1b74e4;
+}
