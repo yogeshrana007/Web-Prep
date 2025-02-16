@@ -1,0 +1,44 @@
+.myDiv{
+    text-align: center;
+    height: 50px;
+    width: 300px;
+    border: 2px solid black;
+    margin: 1px 0 5px 1px ;
+    margin: 0 auto;
+    opacity: 0.9;
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+}
+.myDiv:nth-of-type(1n){
+    background-color: rgb(127, 255, 212,0.8);
+}
+.myDiv:nth-of-type(2n){
+    background-color: beige;
+}
+
+.myDiv:hover:nth-of-type(1n){
+    /* margin-top: 100px; */
+    /* border-radius: 50%; */
+    background-color: aqua;
+    /* transform: scale(1.5,2) rotate(-4deg) skew(30deg) translateX(10px) ; */
+    transform: translateX(100px);
+}
+.myDiv:hover:nth-of-type(2n){
+    background-color: rgb(228, 178, 112);
+}
+
+.myClass{
+    height: 300px;
+    width: 220px;
+    margin: 10px;
+    display: inline-block;
+    box-shadow: 1px 1px 3px black;
+    transition-duration: 1s;
+    background-color: rgb(226, 207, 98,0.3);
+}
+img{
+    width: 100%;
+}
+.myClass:hover{
+    box-shadow: 7px 7px 10px goldenrod;
+}
