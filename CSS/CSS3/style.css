@@ -1,0 +1,30 @@
+h1{
+    height: 50px;
+    text-align: center;
+    border: 2px dotted rgb(126, 13, 239);
+    border-radius: 5px;
+    background-color: palegoldenrod;
+}
+div{
+    height: 150px;
+    width: 400px;
+    background-color: grey;
+    border: 5px,dotted,black;
+    margin: 20px 1em 40px 2em;
+    padding: 1em;
+}
+.myclass{
+    height: 200px;
+    width: 200px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 50px;
+    display: inline-block;
+}
+
+
+ul{
+    display: flex;
+    gap: 30px;
+}
