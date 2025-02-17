@@ -1,0 +1,87 @@
+#outer{
+    width: 80%;
+    height: 450px;
+    background-color: rgba(169, 169, 169, 0.792);
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-content: flex-start; */
+    align-items: center;
+}
+#Voilet{
+    background-color: violet;
+    align-self: flex-start;
+}
+#Indigo{
+    background-color: indigo;
+    flex-shrink: 1;
+}
+#Blue{
+    background-color: blue;
+    flex-grow:2;
+
+}
+#Green{
+    background-color: green;
+    align-self: baseline;
+    flex-shrink: 1;
+
+}
+#Yellow{
+    background-color: yellow;
+    flex-grow: 2;
+}
+#Orange{
+    background-color: orange;
+    flex-basis: 50px;
+    flex-shrink: 1;
+}
+#Red{
+    background-color: red;
+    align-self: flex-end;
+}
+
+/* Practice Q */
+#container{
+    width: 400px;
+    height: 400px;
+    background-color:antiquewhite;
+    margin: 10px auto;
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.inner{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: rgb(103, 100, 100);
+    border-radius: 15px;
+    font-size: 50px;
+    border: 3px solid black;
+    transition: .1s ease-in 0.2s;
+}
+.inner:hover{
+    box-shadow: 5px 5px 10px gold;
+}
+
+/* Q no. 2 */
+#navbar{
+    height: 50px;
+    width: 900px;
+    background-color: pink;
+    border: 2px solid lightseagreen;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+.option{
+    height: 50px;
+    width: 80px;
+    border-radius: 10px ;
+    font-size: 24px;
+    margin-left: 5px;
+    line-height: 50px;
+}
