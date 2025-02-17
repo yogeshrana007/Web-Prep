@@ -21,8 +21,8 @@ body{
     position:absolute;
     background-color: black;
     border-radius: 50%;
-    top: 40px;
-    left:5%;
+    top: 41px;
+    left:39px;
 }
 #eye2{
     height: 13px;
@@ -30,8 +30,8 @@ body{
     position:absolute;
     background-color: black;
     border-radius: 50%;
-    top: 40px;
-    left:10%;
+    top: 41px;
+    left:78px;
 }
 #mouth{
     height: 20px;
@@ -41,7 +41,7 @@ body{
     border-bottom-right-radius: 13px;
     position: absolute;
     top: 80px;
-    left: 5.2%;
+    left: 41px;
     transition: 1s ease-in 0.3s;
 }
 #mouth:hover{
