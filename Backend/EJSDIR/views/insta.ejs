@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title><%= data.name %>'s Instagram</title>
+        <link rel="stylesheet" href="/insta.css" />
+    </head>
+    <body>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-pic"></div>
+
+                <div class="profile-info">
+                    <h2><%= data.name %></h2>
+                    <button>Follow</button>
+                    <button>Message</button>
+
+                    <div class="stats">
+                        <span
+                            ><strong><%= data.posts.length %></strong>
+                            posts</span
+                        >
+                        <span
+                            ><strong><%= data.followers %></strong>
+                            followers</span
+                        >
+                        <span
+                            ><strong><%= data.following %></strong>
+                            following</span
+                        >
+                    </div>
+
+                    <div class="bio">
+                        <p>
+                            <strong>Bio:</strong> This is a cool <%= data.name
+                            %> account!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Posts</h3>
+            <div class="posts-grid">
+                <% data.posts.forEach(post => { %>
+                <div class="post">
+                    <img src="<%= post.image %>" alt="post" />
+                    <div class="post-info">
+                        ❤️ <%= post.likes %> | 💬 <%= post.comments %>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </body>
+</html>
