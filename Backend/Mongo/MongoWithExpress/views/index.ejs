@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Messages</title>
+        <link rel="stylesheet" href="/css/index.css" />
+    </head>
+    <body>
+        <h1>All Messages</h1>
+
+        <form method="get" action="/chats/new">
+            <button>Send New Message</button>
+        </form>
+
+        <% chats.forEach(function(message) { %>
+        <div class="message">
+            <div class="from-to"><%= message.from %> → <%= message.to %></div>
+            <div class="text"><%= message.msg %></div>
+            <div class="time"><%= message.created_at.toLocaleString() %></div>
+            <form method="get" action="/chats/<%= message.id%>/edit">
+                <div class="edit"><button>Edit Msg</button></div>
+            </form>
+            <form
+                method="POST"
+                action="/chats/<%= message.id%>?_method=DELETE"
+                onsubmit="return confirmDelete()"
+            >
+                <div class="delete"><button>Delete Msg</button></div>
+            </form>
+        </div>
+        <% }); %>
+        <script src="/confirmDelete.js"></script>
+    </body>
+</html>
