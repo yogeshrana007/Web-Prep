@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>All Posts</title>
+        <style>
+            .post {
+                border: 2px solid pink;
+                /* width: 400px; */
+                padding-bottom: 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Quora</h1>
+        <% for(post of posts) { %>
+        <div class="post">
+            <h3 class="user">@<%= post.username %></h3>
+            <p class="content"><%= post.content %></p>
+            <button>see more</button>
+            <button>edit post</button>
+            <button>Delete post</button>
+        </div>
+        <% } %>
+        <br />
+        <br />
+        <button>create new post</button>
+    </body>
+</html>
