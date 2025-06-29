@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add New User</title>
+        <link rel="stylesheet" href="/adduser.css" />
+    </head>
+    <body>
+        <div class="form-container">
+            <h2>Add New User</h2>
+            <form method="POST" action="/user">
+                <input placeholder="Enter ID" name="id" required />
+                <input placeholder="Enter Username" name="username" required />
+                <input
+                    placeholder="Enter Email"
+                    name="email"
+                    type="email"
+                    required
+                />
+                <input
+                    placeholder="Enter Password"
+                    name="password"
+                    type="password"
+                    required
+                />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </body>
+</html>
