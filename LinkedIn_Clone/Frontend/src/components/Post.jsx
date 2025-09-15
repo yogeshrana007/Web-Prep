@@ -1,14 +1,17 @@
 import axios from "axios";
 import moment from "moment";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiFillLike } from "react-icons/ai";
 import { BiLike } from "react-icons/bi";
 import { FaRegCommentDots, FaRegThumbsUp } from "react-icons/fa";
 import { LuSendHorizontal } from "react-icons/lu";
+import { io } from "socket.io-client";
 import DP from "../assets/DP.png";
+import ConnectionButton from "../components/ConnectionButton.jsx";
 import { AuthDataContext } from "../context/AuthContext";
 import { UserDataContext } from "../context/UserContext";
 
+let socket = io("http://localhost:8000");
 export default function Post({
     id,
     author,
@@ -81,27 +84,52 @@ export default function Post({
         }
     };
 
+    useEffect(() => {
+        socket.on("likeUpdated", ({ postId, likes }) => {
+            if (postId == id) {
+                setLikes(likes);
+            }
+        });
+
+        socket.on("commentAdded", ({ postId, comment }) => {
+            if (postId == id) {
+                setComments(comment);
+            }
+        });
+
+        return () => {
+            socket.off("likeUpdated");
+            socket.off("commentAdded");
+        };
+    }, [id]);
     return (
         <>
             <div className="w-full min-h-[200px] bg-white rounded-lg shadow-sm p-4">
                 {/* User info */}
-                <div className="flex items-start gap-3 mb-4">
-                    <img
-                        src={author.profileImage.url || DP}
-                        alt="DP"
-                        className="w-12 h-12 rounded-full object-cover border"
-                    />
-                    <div>
-                        <div className="font-semibold text-[16px]">
-                            {author.firstName} {author.lastName}
-                        </div>
-                        <div className="text-[12px] text-gray-500">
-                            {author.headline}
-                        </div>
-                        <div className="text-[11px] text-gray-400">
-                            {moment(createdAt).fromNow()}
+                <div className="flex justify-between">
+                    <div className="flex items-start gap-3 mb-4">
+                        <img
+                            src={author.profileImage.url || DP}
+                            alt="DP"
+                            className="w-12 h-12 rounded-full object-cover border"
+                        />
+                        <div>
+                            <div className="font-semibold text-[16px]">
+                                {author.firstName} {author.lastName}
+                            </div>
+                            <div className="text-[12px] text-gray-500">
+                                {author.headline}
+                            </div>
+                            <div className="text-[11px] text-gray-400">
+                                {moment(createdAt).fromNow()}
+                            </div>
                         </div>
                     </div>
+                    {userData.user._id != author._id && (
+                        <div className="">
+                            <ConnectionButton userId={author._id} />
+                        </div>
+                    )}
                 </div>
 
                 {/* Description + Image */}

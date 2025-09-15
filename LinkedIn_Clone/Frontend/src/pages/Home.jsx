@@ -85,7 +85,7 @@ function Home() {
 
     return (
         <>
-            <div className="w-full min-h-screen bg-gray-100 flex flex-col items-center relative ">
+            <div className="w-full min-h-screen bg-[#f4f2ee] flex flex-col items-center relative ">
                 <Navbar />
                 {showEdit && <EditProfile />}
 
@@ -165,7 +165,7 @@ function Home() {
                 )}
 
                 {/* Main Layout */}
-                <div className="flex flex-col lg:flex-row items-start justify-center w-full max-w-[1200px] gap-4 p-4 pt-[90px]">
+                <div className="flex flex-col lg:flex-row items-start justify-center w-full max-w-[1200px] gap-4 p-4 mt-[65px]">
                     {/* Left Panel - Profile Card */}
                     <div className="w-full lg:w-1/4 bg-white shadow rounded-xl overflow-hidden">
                         {/* Cover */}

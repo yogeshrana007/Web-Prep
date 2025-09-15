@@ -217,7 +217,7 @@ function EditProfile() {
                     <input
                         type="text"
                         placeholder="firstname"
-                        className="w-full outline-none border-gray-600  px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600  px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData?.firstName}
                         onChange={(e) =>
                             setFormData({
@@ -229,7 +229,7 @@ function EditProfile() {
                     <input
                         type="text"
                         placeholder="lastname"
-                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData.lastName}
                         onChange={(e) =>
                             setFormData({
@@ -241,7 +241,7 @@ function EditProfile() {
                     <input
                         type="text"
                         placeholder="username"
-                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData.userName}
                         onChange={(e) =>
                             setFormData({
@@ -253,7 +253,7 @@ function EditProfile() {
                     <input
                         type="text"
                         placeholder="headline"
-                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData.headline}
                         onChange={(e) =>
                             setFormData({
@@ -265,7 +265,7 @@ function EditProfile() {
                     <input
                         type="text"
                         placeholder="location"
-                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData.location}
                         onChange={(e) =>
                             setFormData({
@@ -275,7 +275,7 @@ function EditProfile() {
                         }
                     />
                     <select
-                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg"
+                        className="w-full outline-none border-gray-600 px-[10px] py-[9px] text-[16px] border-2 rounded-lg"
                         value={formData.gender}
                         onChange={(e) =>
                             setFormData({
@@ -290,7 +290,7 @@ function EditProfile() {
                         <option value="Other">Other</option>
                     </select>
                     <div className="w-full border-gray-600 px-[10px] py-[9px] text-[18px] border-2 rounded-lg  ">
-                        <label className="block  font-medium mb-2 text-[18px]">
+                        <label className="block  font-medium mb-2 text-[17px]">
                             Skills
                         </label>
                         {/* Show Added Skills */}
@@ -298,7 +298,7 @@ function EditProfile() {
                             {formData.skills?.map((skill, index) => (
                                 <span
                                     key={index}
-                                    className=" bg-cyan-200 px-4 py-2 mb-[10px] rounded-md text-[14px] flex items-center gap-1"
+                                    className=" bg-cyan-200 px-3 py-1 mb-[10px] rounded-md text-[14px] flex items-center gap-1"
                                 >
                                     {skill}
                                     <button
@@ -362,7 +362,7 @@ function EditProfile() {
 
                     {/* Education */}
                     <div className="w-full py-[10px] outline-none border-2 border-gray-600 rounded-lg ">
-                        <label className="px-[10px] py-[10px] text-[18px] rounded font-semibold">
+                        <label className="px-[10px] py-[10px] text-[17px] rounded font-semibold">
                             Education
                         </label>
                         {/* Show education data */}
@@ -370,9 +370,9 @@ function EditProfile() {
                             {formData.education?.map((edu, index) => (
                                 <div
                                     key={index}
-                                    className="w-[90%] bg-gray-100 flex justify-between items-center ml-[25px] mt-[15px] mb-[15px]"
+                                    className="w-[90%] bg-gray-100 flex justify-between items-center ml-[25px]  mt-[15px] mb-[15px]"
                                 >
-                                    <div className="flex flex-col gap-[8px]">
+                                    <div className="flex flex-col text-[16px] gap-[8px]">
                                         <div className="">
                                             College : {edu.college}
                                         </div>
@@ -477,7 +477,7 @@ function EditProfile() {
                     </div>
                     {/* Experience */}
                     <div className="w-full py-[10px] outline-none border-2 border-gray-600 rounded-lg ">
-                        <label className="px-[10px] py-[10px] text-[18px] rounded font-semibold">
+                        <label className="px-[10px] py-[10px] text-[17px] rounded font-semibold">
                             Experience
                         </label>
                         {/* Show education data */}
@@ -485,7 +485,7 @@ function EditProfile() {
                             {formData.experience?.map((exp, index) => (
                                 <div
                                     key={index}
-                                    className="w-[90%] bg-gray-100 flex justify-between items-center ml-[25px] mt-[15px] mb-[15px]"
+                                    className="w-[90%] bg-gray-100 flex justify-between items-center ml-[25px] mt-[15px] text-[16px] mb-[15px]"
                                 >
                                     <div className="flex flex-col gap-[8px]">
                                         <div className="">

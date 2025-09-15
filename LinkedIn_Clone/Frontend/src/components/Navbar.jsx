@@ -32,11 +32,19 @@ function Navbar() {
 
     return (
         <>
-            <div className=" w-full min-h-[10vh] bg-[hsl(0,0%,100%)] shadow-md flex justify-between md:justify-around items-center px-[10px] z-[80] fixed">
+            <div className="w-full h-[10vh] bg-[hsl(0,0%,100%)] shadow-md flex justify-between md:justify-around items-center px-[10px] z-[80] fixed">
                 {/* left div */}
                 <div className="flex justify-center items-center gap-[10px]  ">
-                    <div onClick={() => setActiveSearch(false)}>
-                        <img src={logo2} alt="linkedin-logo" className="" />
+                    <div
+                        onClick={() => setActiveSearch(false)}
+                        className="cursor-pointer"
+                    >
+                        <img
+                            src={logo2}
+                            alt="linkedin-logo"
+                            className=""
+                            onClick={() => navigate("/")}
+                        />
                     </div>
                     {!activeSearch && (
                         <div>
@@ -82,7 +90,10 @@ function Navbar() {
                             <div className="text-[19px] font-semibold text-gray-700">
                                 {`${userData?.user?.firstName} ${userData?.user?.lastName}`}
                             </div>
-                            <button className="w-[85%] h-[40px] border-2 border-[#2dc0ff] text-[#2dc0ff] rounded-full">
+                            <button
+                                className="w-[85%] h-[40px] border-2 border-[#2dc0ff] text-[#2dc0ff] rounded-full"
+                                onClick={() => navigate("/profile")}
+                            >
                                 View Profile
                             </button>
                             <div className="w-[85%] h-[1px] bg-gray-300">
@@ -90,7 +101,10 @@ function Navbar() {
                             </div>
 
                             {/* My Network */}
-                            <div className=" w-full flex items-center justify-start text-gray-600 hover:text-gray-900 pl-[20px] gap-[10px] cursor-pointer">
+                            <div
+                                className=" w-full flex items-center justify-start text-gray-600 hover:text-gray-900 pl-[20px] gap-[10px] cursor-pointer"
+                                onClick={() => navigate("/network")}
+                            >
                                 <FaUserGroup className="w-[22px] h-[22px] " />
                                 <div>My Networks</div>
                             </div>
@@ -105,19 +119,28 @@ function Navbar() {
                     )}
 
                     {/* Home icon */}
-                    <div className=" lg:flex flex-col items-center justify-center text-gray-600 hover:text-gray-900 hidden cursor-pointer">
+                    <div
+                        className=" lg:flex flex-col items-center justify-center text-[14px] text-gray-600 hover:text-gray-900 hidden cursor-pointer"
+                        onClick={() => navigate("/")}
+                    >
                         <TiHome className="w-[22px] h-[22px] " />
                         <div>Home</div>
                     </div>
 
                     {/* My Network */}
-                    <div className=" md:flex flex-col items-center justify-center text-gray-600 hover:text-gray-900 hidden cursor-pointer">
+                    <div
+                        className=" md:flex flex-col items-center text-[14px] justify-center text-gray-600 hover:text-gray-900 hidden cursor-pointer"
+                        onClick={() => navigate("/network")}
+                    >
                         <FaUserGroup className="w-[22px] h-[22px] " />
                         <div>My Networks</div>
                     </div>
 
                     {/* Notification */}
-                    <div className=" flex flex-col items-center justify-center text-gray-600 hover:text-gray-900 cursor-pointer">
+                    <div
+                        className=" flex flex-col items-center justify-center text-[14px] text-gray-600 hover:text-gray-900 cursor-pointer"
+                        // onClick={() => navigate("/notification")}
+                    >
                         <IoNotificationsSharp className="w-[23px] h-[23px] " />
                         <div className="hidden md:block">Notification</div>
                     </div>
@@ -125,7 +148,7 @@ function Navbar() {
                     {/* DP */}
                     <div
                         onClick={() => setShowPopup((prev) => !prev)}
-                        className="h-[50px] w-[50px] rounded-full text-gray-500 cursor-pointer"
+                        className="h-[45px] w-[45px] rounded-full text-gray-500 cursor-pointer"
                     >
                         <img
                             src={
