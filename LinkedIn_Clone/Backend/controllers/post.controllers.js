@@ -1,3 +1,4 @@
+import { io } from "../index.js";
 import Post from "../models/post.model.js";
 
 export const createPost = async (req, res) => {
@@ -63,6 +64,7 @@ export const like = async (req, res) => {
 
         await post.save(); // update the changes
 
+        io.emit("likeUpdated", { postId, likes: post.like });
         return res.status(200).json(post);
     } catch (error) {
         return res.status(500).json({ message: `like error ${error}` });
@@ -82,6 +84,8 @@ export const comment = async (req, res) => {
             },
             { new: true }
         ).populate("comment.user", "firstName lastName profileImage headline");
+
+        io.emit("commentAdded", { postId, comment: post.comment });
 
         return res.status(200).json(post);
     } catch (error) {
